@@ -56,7 +56,7 @@ TSet& TSet::operator=(const TSet &s) // присваивание
     return *this;
 }
 
-bool TSet::operator==(const TSet &s) const // сравнение
+int TSet::operator==(const TSet &s) const // сравнение
 {
     if (BitField == s.BitField)
     {
@@ -65,7 +65,7 @@ bool TSet::operator==(const TSet &s) const // сравнение
     return false;
 }
 
-bool TSet::operator!=(const TSet &s) const // сравнение
+int TSet::operator!=(const TSet &s) const // сравнение
 {
     if (*this == s) return false;
     else return true;
