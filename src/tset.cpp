@@ -74,7 +74,7 @@ int TSet::operator!=(const TSet &s) const // сравнение
 TSet TSet::operator+(const TSet &s) // объединение
 {
     TSet res(*this);
-    res.MaxPower = std::max(MaxPower, s.MaxPower);
+    res.MaxPower =  MaxPower > s.MaxPower ? MaxPower : s.MaxPower;
     res.BitField = BitField | s.BitField;
     return res;
 }
@@ -96,7 +96,7 @@ TSet TSet::operator-(const int Elem) // разность с элементом
 TSet TSet::operator*(const TSet &s) // пересечение
 {
     TSet res(*this);
-    res.MaxPower = std::max(MaxPower, s.MaxPower);
+    res.MaxPower =  MaxPower > s.MaxPower ? MaxPower : s.MaxPower;
     res.BitField = BitField & s.BitField;
     return res;
 }
